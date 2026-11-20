@@ -40,39 +40,53 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
   return (
     <div
       lang={language}
-      className={`max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-14 relative z-10 space-y-16 ${
+      className={`max-w-5xl mx-auto px-4 sm:px-6 relative z-10 space-y-16 ${
         language === 'te' ? 'lang-te' : ''
       }`}
     >
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: CENTERED HERO SURFACE (MindCloud Composition)
+          SECTION 1: FULL-BLEED ATMOSPHERIC HERO (MindCloud Gradient in Berry/Coral)
       ────────────────────────────────────────────────────────────── */}
-      <section className="pt-8 sm:pt-14 pb-10 max-w-4xl mx-auto text-center flex flex-col items-center relative">
-        {/* Ambient Warm Blush Radial Glow behind Hero */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[340px] bg-gradient-to-b from-[#FA6A48]/15 via-[#FFDFD7]/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <section className="relative w-screen left-1/2 -translate-x-1/2 -mt-4 sm:-mt-6 pt-16 sm:pt-24 pb-20 sm:pb-32 px-4 sm:px-6 text-center flex flex-col items-center justify-center overflow-hidden">
+        {/* Full-Bleed Atmospheric Gradient Canvas */}
+        <div 
+          className="absolute inset-0 pointer-events-none -z-20"
+          style={{
+            background: `
+              radial-gradient(ellipse 110% 70% at 50% 60%, rgba(250, 106, 72, 0.95) 0%, rgba(214, 52, 75, 0.92) 28%, rgba(140, 36, 50, 0.96) 52%, #1C0B12 85%),
+              linear-gradient(to bottom, #16070D 0%, #280E16 30%, #8C2432 58%, #FA6A48 78%, #FFF6F5 100%)
+            `
+          }}
+        />
+
+        {/* Ambient Radial Flare behind Headline */}
+        <div className="absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] max-w-[95vw] h-[340px] bg-[#FA6A48]/35 rounded-full blur-[90px] pointer-events-none mix-blend-screen -z-10" />
+
+        {/* Bottom smooth wash to blend into the blush canvas */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-[#FFF6F5]/50 to-[#FFF6F5] pointer-events-none -z-10" />
 
         {/* Top Centered Pill Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-md text-[#8C2432] border border-[#F6D9D4] shadow-mindcloud-sm mb-7 hover:border-[#FA6A48]/40 transition-colors">
-          <span className="w-2 h-2 rounded-full bg-[#FA6A48] animate-pulse" />
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 backdrop-blur-md text-white border border-white/25 shadow-lg mb-8 hover:border-white/50 transition-colors relative z-10">
+          <span className="w-2 h-2 rounded-full bg-[#FA6A48] animate-pulse shadow-[0_0_10px_#FA6A48]" />
           <span>{t.welcome.tag}</span>
-          <span className="text-[#F6D9D4]">•</span>
-          <span className="text-[#FA6A48] font-bold">Verified Clinical Standards</span>
+          <span className="text-white/40">•</span>
+          <span className="text-[#FFCAD4] font-bold">Verified Clinical Standards</span>
         </div>
 
-        {/* Display Headline — Centered & High Impact */}
+        {/* Display Headline — Pure White High-Contrast Typography */}
         <h1
-          className={`text-[#8C2432] font-semibold tracking-[-0.035em] [text-wrap:balance] max-w-3xl mx-auto mb-6 ${
+          className={`text-white font-bold tracking-[-0.035em] [text-wrap:balance] max-w-4xl mx-auto mb-6 drop-shadow-md relative z-10 ${
             language === 'te'
               ? 'text-3xl sm:text-5xl lg:text-6xl leading-[1.3] font-medium'
-              : 'text-4xl sm:text-6xl lg:text-[4rem] leading-[1.1]'
+              : 'text-4xl sm:text-6xl lg:text-[4.5rem] leading-[1.08]'
           }`}
         >
           {t.welcome.title}
         </h1>
 
-        {/* Centered Subheadline */}
+        {/* Centered Subheadline — Soft Tinted Ivory */}
         <p
-          className={`text-[#5A4548] font-normal max-w-2xl mx-auto mb-10 [text-wrap:pretty] ${
+          className={`text-[#FFEAE5] font-normal max-w-2xl mx-auto mb-10 [text-wrap:pretty] drop-shadow-sm relative z-10 ${
             language === 'te'
               ? 'text-base sm:text-lg leading-[1.8]'
               : 'text-base sm:text-lg leading-relaxed'
@@ -82,8 +96,8 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
         </p>
 
         {/* MindCloud Floating Action Capsule */}
-        <div className="w-full max-w-xl mx-auto space-y-3">
-          <div className="bg-white/95 backdrop-blur-xl border border-[#F6D9D4] rounded-full p-2 sm:p-2.5 shadow-mindcloud-lg flex items-center gap-2 hover:border-[#FA6A48]/50 focus-within:border-[#FA6A48] focus-within:ring-4 focus-within:ring-[#FA6A48]/15 transition-all">
+        <div className="w-full max-w-xl mx-auto space-y-3 relative z-10">
+          <div className="bg-white rounded-3xl sm:rounded-full p-2.5 sm:p-3 border border-white/90 shadow-[0_20px_50px_rgba(30,10,16,0.38)] flex items-center gap-2 hover:ring-4 hover:ring-white/20 focus-within:ring-4 focus-within:ring-white/30 transition-all">
             <input
               id="hero-user-email"
               type="email"
@@ -98,40 +112,40 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
                 }
               }}
               placeholder={t.welcome.emailPlaceholder}
-              className="flex-1 px-4 sm:px-5 py-2.5 text-sm sm:text-base font-sans bg-transparent text-[#3A282B] placeholder-[#806669]/60 focus:outline-none"
+              className="flex-1 px-4 sm:px-5 py-2 text-sm sm:text-base font-sans bg-transparent text-[#2D1B20] placeholder-[#806669]/70 focus:outline-none"
             />
 
             {/* Quick Action Circular Arrow Pill Button */}
             <button
               onClick={() => handlePathwayClick('pre_care')}
               title="Continue to Pre-Care Education"
-              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FA6A48] hover:bg-[#EE5A36] text-white flex items-center justify-center shrink-0 shadow-mindcloud-coral hover:scale-105 active:scale-95 transition-all"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FA6A48] hover:bg-[#EE5A36] text-white flex items-center justify-center shrink-0 shadow-lg shadow-[#FA6A48]/40 hover:scale-105 active:scale-95 transition-all"
             >
               <ArrowRight className="w-5 h-5 -rotate-45" />
             </button>
           </div>
 
           {emailError && (
-            <p className="flex items-center justify-center gap-1.5 text-xs text-red-700 font-medium">
-              <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+            <p className="flex items-center justify-center gap-1.5 text-xs text-white font-medium bg-red-900/80 backdrop-blur-md px-3 py-1 rounded-full w-fit mx-auto shadow-sm">
+              <AlertCircle className="w-3.5 h-3.5 shrink-0 text-red-300" />
               <span>{emailError}</span>
             </p>
           )}
 
           {/* Pathway Intent Selector Pills */}
-          <div className="flex items-center justify-center gap-2.5 pt-1">
-            <span className="text-[11px] uppercase tracking-wider font-semibold text-[#806669]">
+          <div className="flex items-center justify-center gap-2.5 pt-2">
+            <span className="text-[11px] uppercase tracking-wider font-semibold text-[#FFCAD4]/90">
               Or start with:
             </span>
             <button
               onClick={() => handlePathwayClick('pre_care')}
-              className="px-3.5 py-1.5 bg-white/90 hover:bg-[#FFF0EC] text-[#8C2432] hover:text-[#FA6A48] border border-[#F6D9D4] hover:border-[#FA6A48] text-xs font-semibold rounded-full shadow-sm transition-all"
+              className="px-4 py-1.5 bg-white/15 hover:bg-white/25 text-white border border-white/25 hover:border-white/50 text-xs font-semibold rounded-full shadow-sm backdrop-blur-md transition-all"
             >
               01 Pre-Care Education
             </button>
             <button
               onClick={() => handlePathwayClick('post_care')}
-              className="px-3.5 py-1.5 bg-white/90 hover:bg-[#FFF0EC] text-[#8C2432] hover:text-[#FA6A48] border border-[#F6D9D4] hover:border-[#FA6A48] text-xs font-semibold rounded-full shadow-sm transition-all"
+              className="px-4 py-1.5 bg-white/15 hover:bg-white/25 text-white border border-white/25 hover:border-white/50 text-xs font-semibold rounded-full shadow-sm backdrop-blur-md transition-all"
             >
               02 Post-Care Recovery
             </button>
