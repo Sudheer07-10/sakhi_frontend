@@ -66,30 +66,30 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-[#FFF6F5]/50 to-[#FFF6F5] pointer-events-none -z-10" />
 
         {/* Top Centered Pill Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 backdrop-blur-md text-white border border-white/25 shadow-lg mb-8 hover:border-white/50 transition-colors relative z-10">
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 backdrop-blur-md text-white border border-white/25 shadow-lg mb-8 sm:mb-10 hover:border-white/50 transition-colors relative z-10">
           <span className="w-2 h-2 rounded-full bg-[#FA6A48] animate-pulse shadow-[0_0_10px_#FA6A48]" />
           <span>{t.welcome.tag}</span>
           <span className="text-white/40">•</span>
           <span className="text-[#FFCAD4] font-bold">Verified Clinical Standards</span>
         </div>
 
-        {/* Display Headline — Refined Editorial Size */}
+        {/* Display Headline — Refined Editorial Size with Generous Line Spacing */}
         <h1
-          className={`text-white font-semibold tracking-[-0.03em] [text-wrap:balance] max-w-3xl mx-auto mb-5 drop-shadow-sm relative z-10 ${
+          className={`text-white font-semibold tracking-[-0.025em] [text-wrap:balance] max-w-3xl mx-auto mb-7 sm:mb-8 drop-shadow-sm relative z-10 ${
             language === 'te'
-              ? 'text-2xl sm:text-4xl lg:text-[2.75rem] leading-[1.35] font-medium'
-              : 'text-3xl sm:text-4xl lg:text-[3.25rem] leading-[1.16]'
+              ? 'text-2xl sm:text-4xl lg:text-[2.75rem] leading-[1.5] font-medium'
+              : 'text-3xl sm:text-4xl lg:text-[3.25rem] leading-[1.32] sm:leading-[1.28]'
           }`}
         >
           {t.welcome.title}
         </h1>
 
-        {/* Centered Subheadline — Soft Tinted Ivory */}
+        {/* Centered Subheadline — Soft Tinted Ivory with Generous Line Height and Spacing */}
         <p
-          className={`text-[#FFEAE5]/90 font-normal max-w-xl mx-auto mb-9 [text-wrap:pretty] drop-shadow-sm relative z-10 ${
+          className={`text-[#FFEAE5]/90 font-normal max-w-xl mx-auto mb-10 sm:mb-12 [text-wrap:pretty] drop-shadow-sm relative z-10 ${
             language === 'te'
-              ? 'text-sm sm:text-base leading-[1.8]'
-              : 'text-sm sm:text-base leading-relaxed'
+              ? 'text-sm sm:text-base leading-[1.9]'
+              : 'text-sm sm:text-base leading-[1.75]'
           }`}
         >
           {t.welcome.subtitle}
