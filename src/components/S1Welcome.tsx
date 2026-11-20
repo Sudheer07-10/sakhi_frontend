@@ -45,51 +45,45 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
       }`}
     >
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: DISPLAY HERO SURFACE (MindCloud Inspired)
+          SECTION 1: CENTERED HERO SURFACE (MindCloud Composition)
       ────────────────────────────────────────────────────────────── */}
-      <section className="space-y-6 max-w-4xl text-left">
-        {/* Top Tag Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#FFF0EC] text-[#FA6A48] border border-[#FDC4B5] shadow-sm">
+      <section className="pt-8 sm:pt-14 pb-10 max-w-4xl mx-auto text-center flex flex-col items-center relative">
+        {/* Ambient Warm Blush Radial Glow behind Hero */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[340px] bg-gradient-to-b from-[#FA6A48]/15 via-[#FFDFD7]/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+
+        {/* Top Centered Pill Badge */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/90 backdrop-blur-md text-[#8C2432] border border-[#F6D9D4] shadow-mindcloud-sm mb-7 hover:border-[#FA6A48]/40 transition-colors">
+          <span className="w-2 h-2 rounded-full bg-[#FA6A48] animate-pulse" />
           <span>{t.welcome.tag}</span>
+          <span className="text-[#F6D9D4]">•</span>
+          <span className="text-[#FA6A48] font-bold">Verified Clinical Standards</span>
         </div>
 
-        {/* Display Headline */}
+        {/* Display Headline — Centered & High Impact */}
         <h1
-          className={`text-[#8C2432] [text-wrap:balance] ${
+          className={`text-[#8C2432] font-semibold tracking-[-0.035em] [text-wrap:balance] max-w-3xl mx-auto mb-6 ${
             language === 'te'
-              ? 'font-medium text-3xl sm:text-5xl lg:text-6xl leading-[1.32] tracking-normal'
-              : 'font-semibold text-3xl sm:text-5xl lg:text-[3.5rem] leading-[1.14] tracking-[-0.03em]'
+              ? 'text-3xl sm:text-5xl lg:text-6xl leading-[1.3] font-medium'
+              : 'text-4xl sm:text-6xl lg:text-[4rem] leading-[1.1]'
           }`}
         >
           {t.welcome.title}
         </h1>
 
-        {/* Subheadline */}
+        {/* Centered Subheadline */}
         <p
-          className={`text-[#5A4548] font-normal max-w-2xl [text-wrap:pretty] ${
+          className={`text-[#5A4548] font-normal max-w-2xl mx-auto mb-10 [text-wrap:pretty] ${
             language === 'te'
-              ? 'text-base sm:text-lg leading-[1.8] tracking-normal'
+              ? 'text-base sm:text-lg leading-[1.8]'
               : 'text-base sm:text-lg leading-relaxed'
           }`}
         >
           {t.welcome.subtitle}
         </p>
 
-        {/* Unified MindCloud Action Surface: Email & Pathway Trigger */}
-        <div className="bg-white/95 backdrop-blur-md p-5 sm:p-6 border border-[#F6D9D4] rounded-2xl shadow-mindcloud-md max-w-2xl text-left space-y-4">
-          <div>
-            <label htmlFor="hero-user-email" className="block text-sm font-semibold text-[#3A282B]">
-              {t.welcome.emailLabel}{' '}
-              <span className="text-[#FA6A48] font-normal text-xs">
-                ({t.welcome.emailRequired})
-              </span>
-            </label>
-            <p className="text-xs text-[#806669] mt-0.5 [text-wrap:pretty]">
-              {t.welcome.emailHelper}
-            </p>
-          </div>
-
-          <div className="space-y-2">
+        {/* MindCloud Floating Action Capsule */}
+        <div className="w-full max-w-xl mx-auto space-y-3">
+          <div className="bg-white/95 backdrop-blur-xl border border-[#F6D9D4] rounded-full p-2 sm:p-2.5 shadow-mindcloud-lg flex items-center gap-2 hover:border-[#FA6A48]/50 focus-within:border-[#FA6A48] focus-within:ring-4 focus-within:ring-[#FA6A48]/15 transition-all">
             <input
               id="hero-user-email"
               type="email"
@@ -98,36 +92,48 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
                 setEmail(e.target.value);
                 if (emailError) setEmailError('');
               }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handlePathwayClick('pre_care');
+                }
+              }}
               placeholder={t.welcome.emailPlaceholder}
-              className={`w-full px-4 py-3.5 border text-sm font-sans bg-[#FFF6F5] text-[#3A282B] placeholder-[#806669]/60 focus:outline-none focus:bg-white rounded-xl transition-all shadow-inner ${
-                emailError
-                  ? 'border-red-500 bg-red-50 text-red-950 ring-2 ring-red-200'
-                  : 'border-[#F6D9D4] focus:border-[#FA6A48] focus:ring-2 focus:ring-[#FA6A48]/20'
-              }`}
+              className="flex-1 px-4 sm:px-5 py-2.5 text-sm sm:text-base font-sans bg-transparent text-[#3A282B] placeholder-[#806669]/60 focus:outline-none"
             />
-            {emailError && (
-              <p className="flex items-center gap-1.5 text-xs text-red-700 font-medium">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>{emailError}</span>
-              </p>
-            )}
-          </div>
 
-          {/* Quick Pathway Actions */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            {/* Quick Action Circular Arrow Pill Button */}
             <button
               onClick={() => handlePathwayClick('pre_care')}
-              className="flex-1 px-4 py-3 bg-[#FA6A48] hover:bg-[#EE5A36] text-white font-semibold text-xs uppercase tracking-wider rounded-xl shadow-mindcloud-coral transition-all flex items-center justify-center gap-2 group hover:scale-[1.01] active:scale-[0.99]"
+              title="Continue to Pre-Care Education"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FA6A48] hover:bg-[#EE5A36] text-white flex items-center justify-center shrink-0 shadow-mindcloud-coral hover:scale-105 active:scale-95 transition-all"
             >
-              <span>{t.welcome.preCareTitle}</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-5 h-5 -rotate-45" />
+            </button>
+          </div>
+
+          {emailError && (
+            <p className="flex items-center justify-center gap-1.5 text-xs text-red-700 font-medium">
+              <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+              <span>{emailError}</span>
+            </p>
+          )}
+
+          {/* Pathway Intent Selector Pills */}
+          <div className="flex items-center justify-center gap-2.5 pt-1">
+            <span className="text-[11px] uppercase tracking-wider font-semibold text-[#806669]">
+              Or start with:
+            </span>
+            <button
+              onClick={() => handlePathwayClick('pre_care')}
+              className="px-3.5 py-1.5 bg-white/90 hover:bg-[#FFF0EC] text-[#8C2432] hover:text-[#FA6A48] border border-[#F6D9D4] hover:border-[#FA6A48] text-xs font-semibold rounded-full shadow-sm transition-all"
+            >
+              01 Pre-Care Education
             </button>
             <button
               onClick={() => handlePathwayClick('post_care')}
-              className="flex-1 px-4 py-3 bg-white hover:bg-[#FFF0EC] text-[#8C2432] hover:text-[#FA6A48] border border-[#F6D9D4] hover:border-[#FA6A48] font-semibold text-xs uppercase tracking-wider rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 group hover:scale-[1.01] active:scale-[0.99]"
+              className="px-3.5 py-1.5 bg-white/90 hover:bg-[#FFF0EC] text-[#8C2432] hover:text-[#FA6A48] border border-[#F6D9D4] hover:border-[#FA6A48] text-xs font-semibold rounded-full shadow-sm transition-all"
             >
-              <span>{t.welcome.postCareTitle}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#FA6A48] group-hover:translate-x-0.5 transition-transform" />
+              02 Post-Care Recovery
             </button>
           </div>
         </div>
