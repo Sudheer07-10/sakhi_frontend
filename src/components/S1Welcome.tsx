@@ -47,7 +47,7 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: FULL-BLEED ATMOSPHERIC HERO (MindCloud Gradient in Berry/Coral)
       ────────────────────────────────────────────────────────────── */}
-      <section className="relative w-screen left-1/2 -translate-x-1/2 -mt-4 sm:-mt-6 pt-16 sm:pt-24 pb-20 sm:pb-32 px-4 sm:px-6 text-center flex flex-col items-center justify-center overflow-hidden">
+      <section id="hero-section" className="relative w-screen left-1/2 -translate-x-1/2 -mt-4 sm:-mt-6 pt-16 sm:pt-24 pb-20 sm:pb-32 px-4 sm:px-6 text-center flex flex-col items-center justify-center overflow-hidden">
         {/* Full-Bleed Atmospheric Gradient Canvas */}
         <div 
           className="absolute inset-0 pointer-events-none -z-20"
@@ -196,7 +196,7 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 3: INTERACTIVE SPOTLIGHT (MindCloud Dark Split Card)
       ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#2D1B20] text-[#FFF6F5] border border-[#F6D9D4]/30 rounded-3xl p-6 sm:p-10 shadow-mindcloud-dark relative overflow-hidden text-left">
+      <section id="spotlight-section" className="bg-[#2D1B20] text-[#FFF6F5] border border-[#F6D9D4]/30 rounded-3xl p-6 sm:p-10 shadow-mindcloud-dark relative overflow-hidden text-left">
         {/* Subtle radial ambient light */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FA6A48]/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
 
@@ -308,7 +308,7 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 4: CLINICAL BENTO GRID (MindCloud 4-Cell Grid)
       ────────────────────────────────────────────────────────────── */}
-      <section className="space-y-6 text-left">
+      <section id="bento-grid" className="space-y-6 text-left">
         <div>
           <span className="text-xs font-semibold uppercase tracking-wider text-[#8C2432]">
             Evidence-Based Architecture
