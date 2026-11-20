@@ -146,7 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : mode === 'welcome'
                   ? 'text-white/70 hover:text-white'
                   : 'text-[#3A282B] hover:bg-[#FFF0EC]'
-              }`}
+                }`}
             >
               EN
             </button>
@@ -158,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : mode === 'welcome'
                   ? 'text-white/70 hover:text-white'
                   : 'text-[#3A282B] hover:bg-[#FFF0EC]'
-              }`}
+                }`}
             >
               తెలుగు
             </button>
@@ -170,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : mode === 'welcome'
                   ? 'text-white/70 hover:text-white'
                   : 'text-[#3A282B] hover:bg-[#FFF0EC]'
-              }`}
+                }`}
             >
               Tinglish
             </button>
@@ -185,7 +185,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 : mode === 'welcome'
                 ? 'bg-white/10 text-white border-white/20 hover:bg-white/20'
                 : 'bg-white text-[#8C2432] border-[#F6D9D4] hover:bg-[#FFF0EC]'
-            }`}
+              }`}
             title="Toggle Reviewer test harness"
           >
             <span>{t.demoBadge}</span>
