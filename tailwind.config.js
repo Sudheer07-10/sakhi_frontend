@@ -67,6 +67,11 @@ export default {
         'sakhi-card': '0 4px 24px -2px rgba(140, 36, 50, 0.05), 0 2px 8px -2px rgba(140, 36, 50, 0.03)',
         'sakhi-hover': '0 12px 32px -4px rgba(250, 106, 72, 0.20)',
         'sakhi-button': '0 4px 18px -2px rgba(250, 106, 72, 0.38)',
+        'mindcloud-sm': 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 4px 12px -6px',
+        'mindcloud-md': 'rgba(140, 36, 50, 0.06) 0px 1px 2px 0px, rgba(140, 36, 50, 0.1) 0px 8px 24px -4px',
+        'mindcloud-lg': '0px 14px 34px -4px rgba(140, 36, 50, 0.12), 0px 4px 12px -2px rgba(0, 0, 0, 0.04)',
+        'mindcloud-dark': 'rgba(0, 0, 0, 0.35) 0px 16px 36px -4px, rgba(246, 217, 212, 0.15) 0px 0px 0px 1px',
+        'mindcloud-coral': '0 8px 28px -4px rgba(250, 106, 72, 0.35)',
       },
       animation: {
         'float-slow': 'float 14s ease-in-out infinite',
