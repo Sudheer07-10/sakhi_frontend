@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Language, CareMode, DemoTrace, PostCareContext } from '../types';
-import { 
-  Terminal, 
-  ShieldCheck, 
-  X, 
-  ChevronDown, 
-  ChevronUp 
+import {
+  Terminal,
+  ShieldCheck,
+  X,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 interface S7ReviewerDemoProps {
