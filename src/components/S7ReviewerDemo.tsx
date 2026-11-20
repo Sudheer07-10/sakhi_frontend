@@ -139,9 +139,7 @@ export const S7ReviewerDemo: React.FC<S7ReviewerDemoProps> = ({
             </button>
           ))}
 
-      {/* Vertical Stack of Scenario Cards */}
-      <div className="flex flex-col gap-2.5">
-        {scenarios.map((scn) => (
+          {/* Inspect Route Trace Button */}
           <button
             onClick={() => setShowTraceModal(true)}
             className="w-full text-left p-3 bg-[#FA6A48] hover:bg-[#EE5A36] text-white font-semibold text-xs transition-all rounded-xl shadow-md shadow-[#FA6A48]/30 flex items-center justify-between"
@@ -155,14 +153,9 @@ export const S7ReviewerDemo: React.FC<S7ReviewerDemoProps> = ({
               </div>
             </div>
             <ChevronUp className="w-4 h-4 rotate-90 text-white/80" />
-            <div className="text-[11px] text-[#FFCAD4]/75 leading-tight">
-              {scn.subtitle}
-            </div>
           </button>
-        ))}
         </div>
       </aside>
-    </aside>
 
       {/* Trace Inspector Modal */}
       {showTraceModal && (
