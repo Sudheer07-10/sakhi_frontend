@@ -73,12 +73,12 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
           <span className="text-[#FFCAD4] font-bold">Verified Clinical Standards</span>
         </div>
 
-        {/* Display Headline — Pure White High-Contrast Typography */}
+        {/* Display Headline — Refined Editorial Size */}
         <h1
-          className={`text-white font-bold tracking-[-0.035em] [text-wrap:balance] max-w-4xl mx-auto mb-6 drop-shadow-md relative z-10 ${
+          className={`text-white font-semibold tracking-[-0.03em] [text-wrap:balance] max-w-3xl mx-auto mb-5 drop-shadow-sm relative z-10 ${
             language === 'te'
-              ? 'text-3xl sm:text-5xl lg:text-6xl leading-[1.3] font-medium'
-              : 'text-4xl sm:text-6xl lg:text-[4.5rem] leading-[1.08]'
+              ? 'text-2xl sm:text-4xl lg:text-[2.75rem] leading-[1.35] font-medium'
+              : 'text-3xl sm:text-4xl lg:text-[3.25rem] leading-[1.16]'
           }`}
         >
           {t.welcome.title}
@@ -86,10 +86,10 @@ export const S1Welcome: React.FC<S1WelcomeProps> = ({
 
         {/* Centered Subheadline — Soft Tinted Ivory */}
         <p
-          className={`text-[#FFEAE5] font-normal max-w-2xl mx-auto mb-10 [text-wrap:pretty] drop-shadow-sm relative z-10 ${
+          className={`text-[#FFEAE5]/90 font-normal max-w-xl mx-auto mb-9 [text-wrap:pretty] drop-shadow-sm relative z-10 ${
             language === 'te'
-              ? 'text-base sm:text-lg leading-[1.8]'
-              : 'text-base sm:text-lg leading-relaxed'
+              ? 'text-sm sm:text-base leading-[1.8]'
+              : 'text-sm sm:text-base leading-relaxed'
           }`}
         >
           {t.welcome.subtitle}
